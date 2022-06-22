@@ -34,7 +34,7 @@ app.listen(port, () => {
 
 
 //  in Client side code.
-
+// this code base is use client side. EventSourse() varify the connection.
 const sse = new EventSource("http://localhost:5000/stream");
 
 sse.onerror = (e) => {
