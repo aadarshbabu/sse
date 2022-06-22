@@ -31,3 +31,25 @@ app.listen(port, () => {
     console.log(`port is running ${port}`);
 });
 
+
+
+//  in Client side code.
+
+const sse = new EventSource("http://localhost:5000/stream");
+
+sse.onerror = (e) => {
+    console.log(e); // if error is occure.
+}
+sse.onmessage = (data) => {
+    console.log(data); // if data is present in responce. then the data is communate.
+}
+sse.onopen = (data) => {
+    // when connection is open the return the true otherwise false.
+}
+sse.close() // this is the function close the connectin in client to server.
+
+sse.CLOSED  // property which is return the bool true or false.
+sse.CONNECTING // property is the conncetion is connection status is 0 , 1 , 2
+sse.OPEN // property return the bool if connection is open the
+sse.url // property when you want the see the urls in EventSource().
+sse.withCredentials // its the true or false. if default value is false. if the true the data server validate the client request.
